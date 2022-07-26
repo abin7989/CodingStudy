@@ -11,7 +11,7 @@ public class Solution {
 		int T = Integer.parseInt(br.readLine());
 		for(int test_case=1;test_case<=T;test_case++) {
 			String st = br.readLine();
-			boolean pass = true;
+			boolean pass = false;
 			boolean[][] arr = new boolean[4][14];
 			B:for(int i = 0; i < st.length();i+=3) {
 				String temp = st.substring(i+1,i+3);
@@ -55,8 +55,8 @@ public class Solution {
 				}
 				
 			}
-			System.out.printf("#%d ",test_case);
 			if(pass) {
+				System.out.printf("#%d ",test_case);
 				for(int i = 0 ; i < 4;i++) {
 					int cnt = 0;
 					for(int j = 1; j < 14 ; j++) {

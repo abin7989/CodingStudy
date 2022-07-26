@@ -55,8 +55,8 @@ public class Solution {
 				}
 				
 			}
-			System.out.printf("#%d ",test_case);
 			if(pass) {
+				System.out.printf("#%d ",test_case);
 				for(int i = 0 ; i < 4;i++) {
 					int cnt = 0;
 					for(int j = 1; j < 14 ; j++) {
