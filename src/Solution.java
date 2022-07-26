@@ -13,10 +13,11 @@ public class Solution {
 			String s = br.readLine();
 			char[] before = new char[s.length()];  // 0으로 초기화
 			Arrays.fill(before, '0');
-
+ 
+			
 			int cnt = 0;
 			for (int i = 0; i < s.length(); i++) {
-				if (s.charAt(i) != before[i]) {
+				if (s.charAt(i) != before[i]) {  // 비교
 					Arrays.fill(before, i, s.length(), (before[i] == '1') ? '0' : '1');
 					cnt++;
 				}
