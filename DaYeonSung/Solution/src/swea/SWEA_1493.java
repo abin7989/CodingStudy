@@ -1,3 +1,5 @@
+package swea;
+
 import java.util.Scanner;
 
 public class SWEA_1493 {
@@ -16,9 +18,6 @@ public class SWEA_1493 {
 			
 //			(1, 1) / (1, 2) (2, 1) / (1, 3) (2, 2) (3, 1) / ...
 			
-			int num = 1;
-			boolean p_flag = false;
-			boolean q_flag = false;
 			int px = 0;
 			int py = 0;
 			int qx = 0;
@@ -36,24 +35,38 @@ public class SWEA_1493 {
 //			}
 //			System.out.println(sum);
 			
-			for (int x = 1; x <= num; x++) {
-				for (int y = num++; y >= 1; y--) {
-				if (p == num) {
-					p_flag = true;
-					px = x;
-					py = y;
-				}
-				if (q == num) {
-					q_flag = true;
-					qx = x;
-					qy = y;
-				}
-//				num++;
-				System.out.println(px + " " + py + " " + qx + " " + qy);
-				if (p_flag == true && q_flag == true) break;
-				}
 			
+			int num = 1;
+			int add_x = 2;
+			int add_y = 1;
+			
+//			격자점에 수 붙이기
+			int[][] arr = new int[283][283];
+			
+			for (int x = 1; x <= 282; x++) {
+				for (int y = 1; y <= 282; y++) {
+					arr[x][y] = num;
+					num += add_x;
+					add_x++;
+				}
+				num += add_y;
+				add_y++;
 			}
+			
+			for (int x = 1; x <= 282; x++) {
+				for (int y = 1; y <= 282; y++) {
+					if (arr[x][y] == p) {
+						px = x;
+						py = y;
+					}
+					if (arr[x][y] == q) {
+						qx = x;
+						qy = y;
+					}
+				}
+			}
+			
+			System.out.println(px + " " + py + " " + qx + " " + qy);
 
 		}
 	}
