@@ -1,8 +1,11 @@
+package SWEA;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/* 배열 연산 없애니까 0.28s -> 0.16s 됨 */
 public class SWEA_1493 {
 
 	public static void main(String[] args) throws IOException {
@@ -15,32 +18,31 @@ public class SWEA_1493 {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int p = Integer.parseInt(st.nextToken());
 			int q = Integer.parseInt(st.nextToken());
-			int[][] arr = new int[300][300];
 			int[] idxP = new int[2];	// &p의 좌표 저장 배열
 			int[] idxQ = new int[2];	// &q의 좌표 저장 배열
 			int nextI = 1;				// 다음 진행할 i 좌표
 			int nextJ = 1;				// 다음 진행할 j 좌표
 			int height = 1;				// i의 높이(i의 현재까지 최댓값)
-			int cnt = 1;				// 배열에 순차적으로 값을 넣기 위한 변수
+			int cnt = 0;				// 배열에 순차적으로 값을 넣기 위한 변수
 			
 			/* &p와 &q의 좌표를 모두 찾을 때까지 while문 진행 */
 			while(idxP[0] == 0 || idxQ[0] == 0) {
 				
-				arr[nextI][nextJ] = cnt++;
+				cnt++;
 				
-				/* 좌표의 값 확인 후 저장 */
-				if(arr[nextI][nextJ] == p) {
+				/* 좌표의 값 확인 */
+				if(cnt == p) {
 					
 					idxP[0] = nextI;
 					idxP[1] = nextJ;
 					
 				}
-				if(arr[nextI][nextJ] == q) {
+				if(cnt == q) {
 
 					idxQ[0] = nextI;
 					idxQ[1] = nextJ;
 					
-				} /* 좌표의 값 확인 후 저장 */
+				} /* 좌표의 값 확인 끝 */
 				
 				/* 다음 좌표 계산 */
 				nextI -= 1;
@@ -55,12 +57,8 @@ public class SWEA_1493 {
 					
 				} 
 				
-			}
+			} /* while end */
 
-//			위치 잘 찍히나 확인하기 위해 써본 코드
-//			System.out.println("p : " + idxP[0] + ", " + idxP[1]);
-//			System.out.println("q : " + idxQ[0] + ", " + idxQ[1]);
-			
 			/* &p + &q 의 좌표를 findI, findJ에 저장 */
 			int findI = idxP[0] + idxQ[0];
 			int findJ = idxP[1] + idxQ[1];
@@ -87,6 +85,10 @@ public class SWEA_1493 {
 }
 
 /*
+
+2
+1 5
+3 9
 
 5
 6679 9828
@@ -118,5 +120,7 @@ p★q = #(&p + &q)
 5  11 17 24
 6  16 23
 7  22
+
+0.16659s
 
 */
