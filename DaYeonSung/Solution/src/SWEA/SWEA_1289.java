@@ -2,6 +2,7 @@ package SWEA;
 
 import java.util.Scanner;
 
+// SWEA 1289. 원재의 메모리 복구하기
 public class SWEA_1289 {
 
 	public static void main(String[] args) {
