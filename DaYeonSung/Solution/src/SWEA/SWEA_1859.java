@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+// SWEA 1859. 백만 장자 프로젝트
 public class SWEA_1859 {
 
 	public static void main(String[] args) throws IOException {
