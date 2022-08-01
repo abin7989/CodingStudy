@@ -2,7 +2,7 @@ package SWEA;
 
 import java.util.Scanner;
 
-// SWEA 1289. 수의 새로운 연산
+// SWEA 1493. 수의 새로운 연산
 public class SWEA_1493 {
 
 	public static void main(String[] args) {
