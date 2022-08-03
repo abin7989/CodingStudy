@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 백준 1244. 스위치 켜고 끄기
-public class Main_백준_1244_스위치켜고끄기_SilverIII_성다연_144ms {
+// 백준 1244 스위치 켜고 끄기
+public class Baekjoon_1244 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 //		 스위치 ON : 1
