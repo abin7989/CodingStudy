@@ -1,5 +1,7 @@
 package day_0803;
-
+/*
+   더 효율적인 풀이 : Sum[ i ][ j ] = Sum[ i ][ j - 1 ] + Sum[ i - 1 ][ j ] + arr[ i ][ j ] - Sum[ i - 1 ][ j - 1 ]
+*/
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
