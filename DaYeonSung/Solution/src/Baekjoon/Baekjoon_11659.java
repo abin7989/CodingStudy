@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 백준 11659 구간 합 구하기 4
+// 백준 11659. 구간 합 구하기 4
 public class Baekjoon_11659 {
 
 	public static void main(String[] args) throws IOException {
