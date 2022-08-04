@@ -16,7 +16,7 @@
 <br>
 
 ## **스터디 구성원 (6인)**
----
+
 👩‍💻 고명진 : [https://github.com/m0jinaa](https://github.com/m0jinaa)  
 👨‍💻 김민식 : [https://github.com/abin7989](https://github.com/abin7989)  
 👩‍💻 성다연 : [https://github.com/dysung32](https://github.com/dysung32)  
@@ -27,7 +27,7 @@
 <br>
 
 ## **일정표**
----
+
 <details>
 <summary>1주차</summary>
 <div markdown="1">    
