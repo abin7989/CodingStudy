@@ -15,7 +15,7 @@ public class SWEA_2007 {
 		for (int tc = 1; tc <= T; tc++) { // 테스트 케이스 수만큼 반복
 			String str = br.readLine(); // 문자열 입력 받기
 			
-			for (int i = 1; i <= str.length(); i++) {
+			for (int i = 1; i <= 10; i++) {
 				String str1 = str.substring(0, i); // 0번째부터 i-1 번째 단어까지 자르기
 				String str2 = str.substring(i, i + i); // i번째부터 2i-1 번째 단어까지 자르기
 				if (str1.equals(str2)) { // 일치하면
