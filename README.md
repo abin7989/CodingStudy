@@ -1,5 +1,29 @@
-# CodingStudy
+# **SSAFY 8th Algorithm-Study**
 
+### SSAFY 8기 17반 동기들로 구성된
+### 알고리즘 및 CS 공부를 위한 모각코 스터디입니다.
+<br>
+
+- 기간: 2022년 07월 ~ing
+- 정기 모임: 월요일, 수요일, 목요일 오후 10시
+- 참고 사이트: [백준](https://www.acmicpc.net/), [SWEA](https://swexpertacademy.com/)
+- 언어: Java
+
+<br>
+
+## **스터디 구성원 (6인)**
+---
+👩‍💻 고명진 : [https://github.com/m0jinaa](https://github.com/m0jinaa)  
+👨‍💻 김민식 : [https://github.com/abin7989](https://github.com/abin7989)  
+👩‍💻 성다연 : [https://github.com/dysung32](https://github.com/dysung32)  
+👩‍💻 손예지 : [https://github.com/yezgoget](https://github.com/yezgoget)  
+👩‍💻 송수현 : [https://github.com/suhyeon0513](https://github.com/suhyeon0513)  
+👨‍💻 이연수 : [https://github.com/P3PP4](https://github.com/P3PP4)
+
+<br>
+
+## **일정표**
+---
 <details>
 <summary>1주차</summary>
 <div markdown="1">    
