@@ -10,7 +10,6 @@ import java.util.Deque;
 public class Baekjoon_2164 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 		
 		int N = Integer.parseInt(br.readLine());
 //		6 5 4 3 2 1 위
@@ -33,9 +32,9 @@ public class Baekjoon_2164 {
 //		6 버리기
 //		4
 		
-		Deque<Integer> deque = new ArrayDeque<>();
+		Deque<Integer> deque = new ArrayDeque<Integer>();
 		
-		for (int i = 1; i <= N; i--) {
+		for (int i = 1; i <= N; i++) {
 			deque.add(i);
 		}
 		
