@@ -3,8 +3,6 @@ package SWEA;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
 // SWEA 4047. 영준이의 카드 카운팅
 public class SWEA_4047 {
