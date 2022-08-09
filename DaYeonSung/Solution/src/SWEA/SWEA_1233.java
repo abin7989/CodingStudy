@@ -23,7 +23,6 @@ public class SWEA_1233 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
-		StringBuilder sb = new StringBuilder();
 		
 		for (int tc = 1; tc <= 10; tc++) {
 			int result = 1 ; // 처음 초기값 설정 : 계산 가능(1)
