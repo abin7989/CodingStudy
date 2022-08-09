@@ -16,7 +16,6 @@ public class SWEA_1233 {
 				int s = st.nextToken().charAt(0); // 연산자 or 숫자 : 아스키 코드 값으로 받음
 				arr[N] = s; // 해당 정점에 넣기
 			}
-
 			int flag = 1;
 			for (int i = node_cnt; i >= 2; i--) {
 				// 자식이 연산자이거나 부모가 숫자인 경우 연산 불가
