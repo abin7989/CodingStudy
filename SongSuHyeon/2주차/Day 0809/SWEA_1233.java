@@ -15,9 +15,6 @@ public class SWEA_1233 {
 				int N = Integer.valueOf(st.nextToken()); // 정점 번호 ex) 1
 				int s = st.nextToken().charAt(0); // 연산자 or 숫자 : 아스키 코드 값으로 받음
 				arr[N] = s; // 해당 정점에 넣기
-				while(st.hasMoreTokens()) {
-					st.nextToken();
-				} 
 			}
 
 			int flag = 1;
