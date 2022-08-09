@@ -15,6 +15,8 @@ import java.util.StringTokenizer;
  * 계산이 가능하면 1, 불가능한 경우에 0 출력
  *
  */
+
+// SWEA 1233. 사칙연산 유효성 검사
 public class SWEA_1233 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
