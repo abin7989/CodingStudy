@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class BOJ_11724 {
-	static N, M;
+	static int N, M;
 	static ArrayList<Integer> graph[];
 	static boolean visited[];
 
