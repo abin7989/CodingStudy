@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+
+	public static void main(String[] args) throws IOException {
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		int asize = Integer.parseInt(st.nextToken());
+		int zsize = Integer.parseInt(st.nextToken());
+		int cnt = Integer.parseInt(st.nextToken());
+		
+		int map[] = new int [asize+zsize];
+		int v[] = 
+		for(int i = 1 ; i<14;i++) {
+			a*=i;
+		}
+		System.out.println(a);
+	}
+}

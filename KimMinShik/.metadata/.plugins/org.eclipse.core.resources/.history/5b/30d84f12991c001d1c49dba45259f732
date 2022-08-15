@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+	
+	public static void swap(int[] map,int a,int b) {
+		char temp = map[a];
+		map[a] = map[b];
+		map[b] = temp;
+	}
+	public static boolean p(int[] map,int n) {
+		
+		int i = n-1;
+		while(i>0&&map[i-1]>=map[i])i--;
+		
+		if(i<0) return false;
+		
+		int j = n-1;
+		while(map[i-1]>=map[j])j--;
+		swap(map,i-1,j);
+		
+		int k = n-1;
+		while(i<k) swap(map,i++,k--);
+		
+		return true;
+	}
+	public static void main(String[] args) throws IOException {
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		int aSize = Integer.parseInt(st.nextToken());
+		int zSize = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
+		int size = aSize+zSize;
+		if(aSize+zSize>14) {
+			System.out.println(-1);
+			return;
+		}
+		int map[] = new int [aSize+zSize];
+		boolean v[] = new boolean[aSize+zSize];
+		for(int i = 0 ; i<aSize; i++) {
+			map[i] = 'a';
+		}
+		for(int i = aSize ; i <zSize;i++ ) {
+			map[i]='z';
+		}
+		int cnt = 0 ;
+		do {
+			cnt++;
+			if(cnt==k)
+				break;
+		}while(p(map,size));
+	}
+}

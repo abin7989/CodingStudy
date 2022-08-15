@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+
+	public static void main(String[] args) throws IOException {
+		int n = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine(), " ");
+		int com = Integer.parseInt(st.nextToken());
+		int t = 0;
+		long[] fac = new long[n+1];
+		fac[0] =1;
+		for(int i = 1; i<=n;i++) {
+			fac[i] = i*fac[i-1];
+		}
+		
+		boolean[] v = new boolean[n+1];
+		int nownum = 1;
+		int cnt = 0;
+		long temp = 0;
+		if (com == 1) {
+			long k = Long.parseLong(st.nextToken());
+			for(int i = 0 ; i < n ; i++) {
+				for(int j =1;j<=n;j++) {
+					if(v[j])
+						continue;
+					if(k>fac[n-i-1]) {
+						k-=fac[n-i-1];
+					}
+					else {
+						v[j] = true;
+						sb.append(j).append(" ");
+					}
+				}
+			}
+		} else {
+			int map[] = new int[n];
+			for(int i = 0 ; i< n;i++) {
+				map[i] = Integer.parseInt(st.nextToken());
+			}
+			temp = 0;
+			for(int i = 0 ; i < n ; i++) {
+				for(int j =1;j<map[i];j++) {
+					if(v[j])
+						continue;
+					temp+=fac[n-i-1];
+				}
+				v[map[i]] = true;
+			}
+			sb.append(temp+1);
+		}
+		System.out.println(sb.toString());
+	}
+}

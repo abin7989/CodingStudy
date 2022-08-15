@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+
+	public static void main(String[] args) throws IOException {
+
+		st = new StringTokenizer(br.readLine(), " ");
+		int aSize = Integer.parseInt(st.nextToken());
+		int zSize = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
+		int size = aSize + zSize;
+		long fac[] = new long[size];
+		fac[0] = 1;
+		for (int i = 1; i < size; i++) {
+			fac[i] = i * fac[i - 1];
+		}
+
+		int usea = 0;
+		int usez = 0;
+		int ma = aSize;
+		int mz = zSize;
+		boolean pass = true;
+		bf:for (int i = 0; i < size; i++) {
+			if (usea < aSize) {
+				if (k > fac[ma]) {
+					usez++;
+					mz--;
+					k -= fac[ma]+fac[mz];
+					sb.append('z');
+				} else {
+					usea++;
+					ma--;
+					sb.append('a');
+				}
+			} else {
+				if (k > 1) {
+					pass = false;
+					break;
+				} else {
+					for (int j = 0; j < mz; j++) {
+						sb.append('z');
+					}
+					break bf;
+				}
+			}
+			if (usez >= zSize) {
+				if (k > 1) {
+					pass = false;
+					break;
+				} else {
+					for (int j = 0; j < ma; j++) {
+						sb.append('a');
+					}
+					break bf;
+				}
+			}
+
+		}
+		System.out.println(sb.toString());
+	}
+}

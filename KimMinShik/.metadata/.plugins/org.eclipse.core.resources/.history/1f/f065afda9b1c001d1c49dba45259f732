@@ -1,0 +1,62 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+	
+
+	public static void main(String[] args) throws IOException {
+		
+		st = new StringTokenizer(br.readLine(), " ");
+		int aSize = Integer.parseInt(st.nextToken());
+		int zSize = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
+		int size = aSize+zSize;
+		long fac[] = new long[size];
+		fac[0] = 1;
+		for(int i = 1; i<size;i++) {
+			fac[i] = i*fac[i-1];
+		}
+		int usea =0; 
+		int usez = 0;
+		boolean pass = true; 
+		for(int i = 0 ; i<size;i++) {
+			if(k>fac[size-i-1]) {
+				k-=fac[size-i-1];
+				if(k>fac[size-i-1]) {
+					pass = false;
+					break;
+				}
+				if(usez>=zSize) {
+					if(usea>=aSize) {
+						pass=false;
+						break;
+					}
+					usea++;
+					sb.append('a');
+				}
+				else{
+					usea++;
+					sb.append('a');
+				}
+			}else {
+				if(usea>=aSize) {
+					if(usez>=zSize) {
+						pass=false;
+						break;
+					}
+					usez++;
+					sb.append('z');
+				}
+				else {
+					usea++;
+					sb.append('a');
+				}
+					
+			}
+		}
+		System.out.println(sb.toString());
+	}
+}
