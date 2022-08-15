@@ -7,7 +7,7 @@ public class Main {
 	static StringTokenizer st = null;
 
 	public static void main(String[] args) throws IOException {
-
+		//맥북 주석
 		st = new StringTokenizer(br.readLine(), " ");
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
