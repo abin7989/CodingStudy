@@ -13,6 +13,9 @@
 - 참고 사이트 : [백준](https://www.acmicpc.net/), [SWEA](https://swexpertacademy.com/)
 - 프로그래밍 언어 : Java
 
+## **스터디 노션**
+노션 : [https://www.notion.so/70e79120d439482d924856d4571331d2](https://www.notion.so/70e79120d439482d924856d4571331d2)
+
 <br>
 
 ## **스터디 구성원 (6인)**
