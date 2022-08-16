@@ -1,0 +1,48 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st =null;
+	static int cnt = 0;
+	static int n;
+	static int posx;
+	static int posy;
+	static boolean pass = false;
+	static void ja(int s,int e,int x,int y,int size) {
+		cnt++;
+		if(x==posx&&y==posy){
+			pass=true;
+			return;
+		}
+
+		if(size ==0)
+			return;
+		
+		ja(s,e,x/2,y/2,size/2);
+		if(pass)
+			return;
+		ja(s,e+size/2,x,y/2+size/2,size/2);
+		if(pass)
+			return;
+		ja(s+size/2,e,x/2+size/2,y,size/2);
+		if(pass)
+			return;
+		ja(s+size/2,e+size/2,x+size/2,y+size/2,cnt+1);
+		if(pass)
+			return;
+			
+	}
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		st = new StringTokenizer(br.readLine()," ");
+		n= Integer.parseInt(st.nextToken());
+		posx= Integer.parseInt(st.nextToken());
+		posy= Integer.parseInt(st.nextToken());
+		int tmp = 1<<n;
+		ja(0,0,tmp,tmp,tmp);
+		System.out.println(cnt);
+	}
+}
