@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+
+	public static void main(String[] args) throws IOException {
+
+		boolean map[][] = new boolean[10][10];
+		boolean v[][] = new boolean[10][10];
+		String s = null;
+		for (int i = 0; i < 10; i++) {
+			s = br.readLine();
+			for (int j = 0, index = 0; j < 10; j++, index += 2) {
+				if (s.charAt(index) == '1')
+					map[i][j] = true;
+			}
+		}
+		int cnt = 0 ;
+		int c[] = {0,5,5,5,5,5};
+		nnf:for (int t = 5; t > 0; t--) {
+			for (int i = 0; i < 10; i++) {
+				nf: for (int j = 0; j < 10; j++) {
+					if(v[i][j])
+						continue;
+					if (map[i][j]) {
+						if(i+t>10||j+t>10)
+							continue;
+						for (int p = i; p < i + t; p++) {
+							for (int q = j; q < j + t; q++) {
+								if (!map[p][q]||v[p][q])
+									continue nf;
+							}
+						}
+						for (int p = i; p < i + t; p++) {
+							for (int q = j; q < j + t; q++) {
+								v[p][q] = true;
+							}
+						}
+						cnt++;
+						c[t]--;
+						if(c[t]<=0)
+							continue nnf;
+					}
+				}
+			}
+		}
+		boolean pass = true;
+		out:for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				if(map[i][j]!=v[i][j]) {
+					pass = false;
+					break out;
+				}
+			}
+		}
+		if(pass)
+			System.out.println(cnt);
+		else
+			System.out.println(-1);
+		return;
+	}
+}
