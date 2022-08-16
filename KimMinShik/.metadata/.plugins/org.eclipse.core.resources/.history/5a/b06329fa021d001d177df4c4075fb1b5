@@ -1,0 +1,115 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+
+	public static void main(String[] args) throws IOException {
+		int n = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine(), " ");
+		Node[] map = new Node[n];
+		for (int i = 0; i < n; i++) {
+			map[i] = new Node(Integer.parseInt(st.nextToken()));
+
+		}
+
+		for (int i = 0; i < n; i++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			int temp = Integer.parseInt(st.nextToken());
+			for (int j = 0; j < temp; j++) {
+				int t = Integer.parseInt(st.nextToken())-1;
+				map[i].ch.add(map[t]);
+			}
+		}
+
+		List<Node> al = new ArrayList<Node>();
+		List<Node> bl = new ArrayList<Node>();
+		int addA = 0;
+		int addB = 0;
+		int s = 0;
+		boolean v[] = new boolean[n];
+		int min = Integer.MAX_VALUE;
+		Queue<Node> q= new ArrayDeque<>(); 
+		nf: for (int i = 1, size = (1 << n) - 1; i < size; ++i) {
+			al.clear();
+			bl.clear();
+			addA = 0;
+			addB = 0;
+			for (int j = 0; j < n; j++) {
+				if ((i & (1 << j)) != 0) {
+					al.add(map[j]);
+				} else {
+					bl.add(map[j]);
+				}
+			}
+			if (al.size() > 1) {
+				s = al.size();
+				Arrays.fill(v, false);
+				q.add(al.get(0));
+				v[0] = true;
+				while(!q.isEmpty()) {
+					Node nn = q.poll();
+					for(int j = 0,si=nn.ch.size() ; j<si;j++) {
+						q.offer(nn.ch.get(j));
+					}
+				}
+				for (int j = 0 ; j<s;j++) {
+					if (!v[j]) {
+						continue nf;
+					}
+				}
+				for (Node val : al) {
+					addA += val.por;
+				}
+
+			} else {
+				addA += al.get(0).por;
+			}
+
+			if (bl.size() > 1) {
+				s = bl.size();
+				Arrays.fill(v, false);
+				for (int j = 0; j < s; j++) {
+					for (int k = 0; k < s; k++) {
+						if (j == k)
+							continue;
+						for (Node val : map[j].ch) {
+							if (val == map[k]) {
+								v[k] = true;
+							}
+						}
+					}
+				}
+				for (int j = 0 ; j<s;j++) {
+					if (!v[j]) {
+						continue nf;
+					}
+				}
+				for (Node val : bl) {
+					addB += val.por;
+				}
+			} else {
+				addB += bl.get(0).por;
+			}
+			if(addA==0||addB==0)
+				continue;
+			min = Math.min(min, Math.abs(addB-addA));
+		}
+		if(min!= Integer.MAX_VALUE)
+			System.out.println(min);
+		else
+			System.out.println(-1);
+	}
+
+	static class Node {
+		int por;
+		List<Node> ch = new ArrayList<Node>();
+
+		public Node(int por) {
+			this.por = por;
+		}
+	}
+
+}
