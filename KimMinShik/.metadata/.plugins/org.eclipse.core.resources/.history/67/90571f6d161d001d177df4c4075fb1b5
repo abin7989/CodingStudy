@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+	static int n;
+	static int min = Integer.MAX_VALUE;
+	static void combi(int num,int cnt) {
+		if(num>n)
+			return;
+		if(num==n) {
+			min = Math.min(min, cnt);
+		}
+		combi(num+5,cnt+1);
+		combi(num+3,cnt+1);
+	}
+	public static void main(String[] args) throws IOException {
+		n = Integer.parseInt(br.readLine());
+		combi(0,0);
+		if(min!=Integer.MAX_VALUE)
+			System.out.println(min);
+		else
+			System.out.println(-1);
+		
+	}
+}

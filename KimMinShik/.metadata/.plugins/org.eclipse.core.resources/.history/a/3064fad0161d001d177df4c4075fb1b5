@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+	static int n;
+	public static void main(String[] args) throws IOException {
+		n = Integer.parseInt(br.readLine());
+		int temp = 0;
+		int cnt = 0;
+		int min = Integer.MAX_VALUE;
+		while(true) {
+			cnt++;
+			temp+=3;
+			if((n-temp)%5==0) {
+				cnt+=(n-temp)/5;
+				break;
+			}
+			if(n==temp) {
+				break;
+			}else if(n<temp) {
+				System.out.println(-1);
+				return ;
+			}
+		}
+		System.out.println(cnt);
+	}
+}

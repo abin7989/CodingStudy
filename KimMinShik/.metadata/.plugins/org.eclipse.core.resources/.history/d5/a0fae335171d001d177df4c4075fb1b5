@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+	public static void main(String[] args) throws IOException {
+		int n = Integer.parseInt(br.readLine());
+		int temp = 0;
+		int cnt = 0;
+		int min = Integer.MAX_VALUE;
+		temp = n;
+		while(temp>=0) {
+			cnt++;
+			if(n%3==0) {
+				min= Math.min(temp/3+cnt,min);
+			}
+			temp-=5;
+		}
+		if(min!= Integer.MAX_VALUE)
+		System.out.println(cnt);
+		else
+			System.out.println(-1);
+	}
+}
+
+
+//temp = n;
+//while(n>=0) {
+//	cnt++;
+//	if(n%5==0) {
+//		min= Math.min(n/5+cnt,min);
+//	}
+//	n-=3;
+//}
