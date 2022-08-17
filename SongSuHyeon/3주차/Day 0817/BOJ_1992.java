@@ -49,5 +49,4 @@ public class BOJ_1992 {
 		check(half, r + half, c + half); // 4사분면
 		System.out.print(")");
 	}
-
 }
