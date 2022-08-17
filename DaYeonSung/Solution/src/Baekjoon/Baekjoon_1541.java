@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+// 백준 1541. 잃어버린 괄호
 public class Baekjoon_1541 {
 
 	public static void main(String[] args) throws IOException {
