@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st = null;
+	static char map[][];
+	static boolean v[][];
+	static int finv[][];
+	static boolean pass = false;
+	static int dx[] = {0,-1,1};
+	static int dy[] = {1,1,1};
+	static int n ;
+	static int m ;
+	
+	static void DFS(int x,int y) {
+		if(y==m-1) {
+			pass = true;
+			return;
+		}
+		for(int i = 0 ; i<n;i++) {
+			int nx = dx[i];
+			int ny = dy[i];
+			if(nx<0||nx>=n||v[nx][ny]||map[nx][ny]=='x')
+				continue;
+			v[nx][ny] = true;
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		st = new StringTokenizer(br.readLine()," ");
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
+		map = new char[n][m];
+		v = new boolean [n][m];
+		finv =new boolean [n][m];
+		String s ="";
+		for(int i = 0 ; i <n;i++) {
+			s = br.readLine();
+			for(int j = 0 ; j< n ;j++) {
+				map[i][j] = s.charAt(j);
+			}
+		}
+		
+	}
+}
