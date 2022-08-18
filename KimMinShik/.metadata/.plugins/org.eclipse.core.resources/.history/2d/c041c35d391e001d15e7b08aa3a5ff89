@@ -17,19 +17,16 @@ public class Main {
 		String d = ja(x+size/2,y+size/2,size/2);
 		int temp = a.length()+b.length()+c.length()+d.length();
 		if(temp ==4) {
-			boolean pass = true;
-			int tp = Integer.parseInt(a)+Integer.parseInt(b)+Integer.parseInt(c)+Integer.parseInt(d);
-			if(tp==4)
-				return "1";
-			else if(tp==0)
-				return "0";
-			else {
-				return String.format("(%s%s%s%s)",a,b,c,d);
-			}
+			sb.append(1);
+			return 1;
+		}
+		else if(temp ==0){
+			sb.append(0);
+			return 0;
 		}
 		else{
-			return String.format("(%s%s%s%s)",a,b,c,d);
-			
+			sb.append("(").append(a).append(b).append(c).append(d).append(")");
+			return -100;
 		}
 	}
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -42,6 +39,7 @@ public class Main {
 				map[i][j] = s.charAt(j)-'0';
 			}
 		}
-		System.out.println(ja(0,0,n));
+		ja(0,0,n);
+		System.out.println(sb);
 	}
 }

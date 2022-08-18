@@ -42,6 +42,7 @@ public class Main {
 				map[i][j] = s.charAt(j)-'0';
 			}
 		}
-		System.out.println(ja(0,0,n));
+		ja(0,0,n);
+		System.out.println(sb);
 	}
 }
