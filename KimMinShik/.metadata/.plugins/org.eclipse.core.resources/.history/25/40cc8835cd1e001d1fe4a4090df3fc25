@@ -1,0 +1,123 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(3000);
+	static StringTokenizer st = null;
+	static int sm;
+	static int sc;
+	static int si;
+	static int map[];
+	static char oper[];
+	static char str[];
+	static int find[];
+	static boolean v[];
+	static int pointer = 0;
+	static int strpoint = 0;
+
+	static void helpLoop() {
+		for(int i = sc-1 ; i>=0;i--) {
+			if(v[i]) {
+				
+				sb.append("Loops ").append(find[i]).append(" ").append(i).append("\n");
+			}
+		}
+	}
+
+	public static void fa(int start) {
+		int cnt = 0;
+		for (int i = start + 1; i < sc; i++) {
+			if (oper[i] == '[') {
+				cnt++;
+				fa(i);
+			} else if (oper[i] == ']') {
+				if (cnt == 0) {
+					find[i] = start;
+					find[start] = i;
+					return;
+				}
+				cnt--;
+
+			}
+		}
+		return;
+	}
+
+	public static void main(String[] args) throws IOException {
+		int T = Integer.parseInt(br.readLine());
+
+		for (int test = 0; test < T; test++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			sm = Integer.parseInt(st.nextToken());
+			sc = Integer.parseInt(st.nextToken());
+			si = Integer.parseInt(st.nextToken());
+			map = new int[sm];
+			oper = new char[sc];
+			find = new int[sc];
+			v=new boolean[sc];
+			str = new char[si];
+			String temps = br.readLine();
+			for (int i = 0; i < sc; i++) {
+				oper[i] = temps.charAt(i);
+			}
+			temps = br.readLine();
+
+			for (int i = 0; i < si; i++) {
+				str[i] = temps.charAt(i);
+			}
+			pointer = 0;
+			strpoint = 0;
+			int cnt = 0;
+			boolean endgame =false;
+			fa(-1);
+			for (int i = 0; i < sc; i++) {
+				v[i] = true;
+				cnt++;
+				switch (oper[i]) {
+				case '-':
+					map[pointer] = (map[pointer] - 1) % 256;
+					break;
+				case '+':
+					map[pointer] = (map[pointer] + 1) % 256;
+					break;
+				case '<':
+					if (pointer == 0)
+						pointer = sm - 1;
+					else
+						pointer--;
+					break;
+				case '>':
+					if (pointer == sm - 1)
+						pointer = 0;
+					else
+						pointer++;
+					break;
+				case ',':
+					if (strpoint == si)
+						map[pointer] = 255;
+					else
+						map[pointer] = str[strpoint++];
+					break;
+				case '[':
+					if (map[pointer] == 0)
+						i = find[i];
+					break;
+
+				case ']':
+					i = find[i] - 1;
+					break;
+				}
+				if(cnt>=50_000_000) {
+					endgame = true;
+					break;
+				}
+			}
+			if(!endgame)
+				sb.append("Terminates\n");
+			else
+				
+		}
+		System.out.println(sb);
+	}
+}
