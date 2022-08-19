@@ -1,0 +1,32 @@
+import java.util.*;
+import java.awt.Point;
+import java.io.*;
+
+class Solution
+{
+	//4,8,12,16,20,24,28,31,34,38
+	static int ser[] ={0,1,5,13,25,41,61,85,113,144,178,212};
+	public static void main(String args[]) throws Exception
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		StringTokenizer st =null;
+		int T;
+		T=Integer.parseInt(br.readLine());
+
+		//400*400*400
+		System.out.println(400*400*400);
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+			st = new StringTokenizer(br.readLine()," ");
+			int n = Integer.parseInt(st.nextToken());
+			int m = Integer.parseInt(st.nextToken());
+			Queue<Integer> xq = new ArrayDeque<>();
+			Queue<Integer> yq = new ArrayDeque<>();
+			Queue<Integer> cntq = new ArrayDeque<>();
+			while (!xq.isEmpty()) {
+				
+			}
+		}
+	}
+}
