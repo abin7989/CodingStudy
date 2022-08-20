@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(3000);
+	static StringTokenizer st = null;
+	static int n;
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		n = Integer.parseInt(br.readLine());
+		int v[] = new int[26];
+		String srr[] = new String[n];
+		for(int i = 0 ; i < n ;i++) {
+			 srr[i] = br.readLine();
+			
+			for(int j=0,size= srr[i].length(),k=size-1;j<size;j++,k--) {
+					v[srr[i].charAt(j)-'A']+=Math.pow(10, k);
+			}
+		}
+		Map<Integer,Character> map = new TreeMap<>();
+		for(int i = 0 ; i< 26 ; i++) {
+			map.put( v[i],(char)('A'+i));
+		}
+		for(int i = 0 ; i<n;i++) {
+			
+		}
+		return;
+	}
+}
