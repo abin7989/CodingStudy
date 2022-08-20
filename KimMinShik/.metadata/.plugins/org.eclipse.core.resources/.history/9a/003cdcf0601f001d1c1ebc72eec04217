@@ -1,0 +1,92 @@
+import java.util.*;
+import java.awt.Point;
+import java.io.*;
+
+class Solution {
+	static Queue<Integer> xq = new ArrayDeque<>();
+	static Queue<Integer> yq = new ArrayDeque<>();
+	static Queue<Integer> cntq = new ArrayDeque<>();
+
+	public static void main(String args[]) throws Exception {
+		// 400*400*400
+		// System.out.println(400*400*400);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = null;
+		StringBuilder sb = new StringBuilder(1000);
+		int T;
+		T = Integer.parseInt(br.readLine());
+
+		for (int test_case = 1; test_case <= T; test_case++) {
+			sb.append("#").append(test_case).append(" ");
+			st = new StringTokenizer(br.readLine(), " ");
+			int n = Integer.parseInt(st.nextToken());
+			int m = Integer.parseInt(st.nextToken());
+			char map[][] = new char[n][n];
+			boolean v[][] = new boolean[n][n];
+			int dx[] = { 1, -1, 0, 0 };
+			int dy[] = { 0, 0, 1, -1 };
+			int max = 0;
+			for (int i = 0; i < n; i++) {
+				String s = br.readLine();
+				for (int j = 0, index = 0; j < n; j++, index += 2) {
+					map[i][j] = s.charAt(index);
+				}
+			}
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					int level = 0;
+					int sub = 4;
+					int fin = -1;
+					int home = 0;
+					for (int k = 0; k < n; k++) {
+						Arrays.fill(v[k], false);
+					}
+					xq.offer(i);
+					yq.offer(j);
+					if (map[i][j] == '1') {
+						home++;
+						cntq.offer(m);
+					}
+					else {
+						cntq.offer(0);
+					}
+					while (!xq.isEmpty()) {
+						int size = xq.size();
+						level++;
+						while (size != 0) {
+							int x = xq.poll();
+							int y = yq.poll();
+							int cnt = cntq.poll();
+							if(map[x][y]=='1')
+								home++;
+							fin += cnt;
+							for (int k = 0; k < 4; k++) {
+								int nx = x + dx[k];
+								int ny = y + dy[k];
+								if (nx < 0 || nx >= n || ny < 0 || ny >= n || v[nx][ny])
+									continue;
+								v[nx][ny] = true;
+								xq.offer(nx);
+								yq.offer(ny);
+								if (map[nx][ny] == '1'){
+									cntq.offer(m);
+								}
+								else {
+									cntq.offer(0);
+								}
+							}
+							size--;
+						}
+						if(fin>=0) {
+							max = Math.max(max, home);
+						}
+						fin -= sub;
+						sub+=4;
+					}//end while
+				}
+			}//end for
+			sb.append(max).append("\n");
+		}
+		System.out.println(sb);
+	}
+}
