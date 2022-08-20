@@ -3410,7 +3410,11 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 !MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 !SESSION 2022-08-20 18:27:15.639 -----------------------------------------------
+=======
+!SESSION 2022-08-19 09:03:04.347 -----------------------------------------------
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 !SESSION 2022-08-19 09:03:04.347 -----------------------------------------------
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
@@ -3421,6 +3425,7 @@ eclipse.buildId=4.9.0.I20180906-0745
 java.version=1.8.0_192
 java.vendor=Azul Systems, Inc.
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Framework arguments:  -product org.eclipse.epp.package.jee.product
@@ -3490,6 +3495,8 @@ user global configuration and to define the default location to store repositori
 =======
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data C:\CodingStudy\KimMinShik -product org.eclipse.epp.package.jee.product
 
@@ -3503,6 +3510,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\multicampus'. If this is
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
@@ -3512,8 +3522,11 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2022-08-20 18:27:47.844
 =======
+=======
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 !ENTRY org.eclipse.e4.ui.workbench 2 0 2022-08-19 09:03:10.622
@@ -3554,6 +3567,9 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2022-08-19 09:05:13.363
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
@@ -3577,6 +3593,7 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.jface.text 2 0 2022-08-20 18:41:34.334
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
 
@@ -3587,6 +3604,8 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 =======
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 !ENTRY org.eclipse.jface.text 2 0 2022-08-19 09:05:25.332
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
 
@@ -3595,6 +3614,9 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-08-19 09:05:39.063
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
@@ -3622,7 +3644,11 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.recommenders.models.rcp 1 0 2022-08-20 18:41:49.117
+=======
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2022-08-19 09:05:39.064
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 !ENTRY org.eclipse.recommenders.models.rcp 1 0 2022-08-19 09:05:39.064
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb

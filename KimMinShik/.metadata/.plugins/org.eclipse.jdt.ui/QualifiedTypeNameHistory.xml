@@ -23,6 +23,7 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -35,6 +36,8 @@
 =======
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
@@ -45,6 +48,9 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
+=======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
 =======
 >>>>>>> dc83486dd99733575b3d2758d8d09f57a03259eb
