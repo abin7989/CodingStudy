@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// 백준 10872. 팩토리얼
 public class Baekjoon_10872 {
 
 	static int fact (int n) {
