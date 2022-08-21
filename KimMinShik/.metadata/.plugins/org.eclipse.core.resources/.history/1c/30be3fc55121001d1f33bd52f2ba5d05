@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		st = new StringTokenizer(br.readLine()," ");
+		int start = Integer.parseInt(st.nextToken());
+		int end = Integer.parseInt(st.nextToken());
+		
+		Queue<Integer> q = new ArrayDeque<Integer>();
+		q.offer(start);
+		int size = 0;
+		int dpos[] = {-1,1};
+		int cnt =0;
+		br:while(!q.isEmpty()) {
+			size = q.size();
+			while(size-->0) {
+				int now = q.poll();
+				int np = now*2;
+				if(now==end) {
+					break br;
+				}
+				if(now<end) {
+					q.offer(np);
+					q.offer(now+1);
+				}
+				else {
+					q.offer(now-1);
+				}
+			}
+			cnt++;
+		}
+		System.out.println(cnt-1);
+	}
+}

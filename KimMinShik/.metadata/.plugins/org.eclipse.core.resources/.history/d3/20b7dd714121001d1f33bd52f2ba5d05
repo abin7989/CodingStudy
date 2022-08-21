@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(100);
+	static StringTokenizer st;
+	static int map[][];
+	static int pre[];
+	static boolean v[];
+	static int n;
+	static int min;
+	public static void combi(int cnt) {
+		if (cnt == n) {
+			int size=n/2-1;
+			int temp = 0;
+			for(int i =0;i<size;i++) {
+				temp += map[pre[i]][pre[i+1]];
+				temp -= map[pre[size+1+i]][pre[size+2+i]];
+			}
+			min = Math.min(min,temp);
+			return;
+		}
+
+		for (int i = 0; i < n; i++) {
+			if (v[i])
+				continue;
+			v[i] = true;
+			pre[cnt] = i;
+			combi(cnt + 1);
+			v[i] = false;
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		n = Integer.parseInt(br.readLine());
+		map = new int[n][n];
+		pre = new int[n];
+		v = new boolean[n];
+		for (int i = 0; i < n; i++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			for (int j = 0; j < n; j++) {
+				map[i][j] = Integer.parseInt(st.nextToken());
+			}
+		}
+		for (int i = 0; i < n; i++)
+			for (int j = i; j < n; j++)
+				map[i][j] += map[j][i];
+		combi(0);
+		System.out.println(min);
+	}
+}
