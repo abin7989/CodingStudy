@@ -22,7 +22,7 @@
 
 <br>
 
-## **스터디 구성원 (6인)**
+## **스터디 구성원 (7인)**
 
 👩‍💻 고명진 : [https://github.com/m0jinaa](https://github.com/m0jinaa)  
 👨‍💻 김대희 : [https://github.com/daynice](https://github.com/daynice)  
