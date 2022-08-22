@@ -1,0 +1,74 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st;
+	static Queue<Integer> q = new ArrayDeque<Integer>();
+
+	static boolean v[] = new boolean[100001];
+	static int cn[] = new int[100001];
+	static int cnt = 0;
+	static int mo = 0;
+	static int oper(int i,int num){
+		switch (i)
+		{
+		case 0:
+			return num - 1;
+		case 1:
+			return num + 1;
+		case 2:
+			return num * 2;
+		}
+		return 0;
+	}
+	static void BFS(int start, int end) {
+		q.offer(start);
+		int size = 0;
+		boolean pass = false; 
+		
+		while (!q.isEmpty()) {
+			size = q.size();
+			while (size-- > 0) {
+				int now = q.poll();
+				
+				if (now == end) {
+					mo++;
+					pass = true;
+					continue;
+				}
+				else if(pass) {
+					continue;
+				}
+				
+				for(int i = 0;i<3;i++) {
+					int nn = oper(i,now);
+					if(nn<0|| nn>100001) continue;
+					if(!v[nn]) {
+						v[nn] = true;
+						q.offer(nn);
+					}else{
+						cn[nn] +=cn[now];
+					}
+				}
+			}
+			if(pass) {
+				break;
+			}
+			cnt++;
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		st = new StringTokenizer(br.readLine(), " ");
+		int start = Integer.parseInt(st.nextToken());
+		int end = Integer.parseInt(st.nextToken());
+
+		BFS(start, end);
+
+		System.out.println(cnt);
+		System.out.println(cn[end]);
+		
+	}
+}

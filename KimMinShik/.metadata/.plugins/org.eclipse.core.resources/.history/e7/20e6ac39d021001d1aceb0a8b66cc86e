@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static StringBuilder sb = new StringBuilder(1000);
+
+	public static void main(String[] args)throws IOException{
+		Stack<Integer> st = new Stack<>();
+		int n = Integer.parseInt(br.readLine());
+		int pos = 1;
+		for(int i = 0 ; i< n ; i++) {
+			int k = Integer.parseInt(br.readLine());
+			while(st.peek()!=k) {
+				st.push(pos++);
+				sb.append("+\n");
+				if(pos>n) {
+					System.out.println("NO");
+					System.exit(0);
+				}
+			}
+			st.pop();
+			sb.append("-\n");
+		}
+		System.out.println(sb);
+	}
+}
