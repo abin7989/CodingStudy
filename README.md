@@ -13,14 +13,19 @@
 - 참고 사이트 : [백준](https://www.acmicpc.net/), [SWEA](https://swexpertacademy.com/)
 - 프로그래밍 언어 : Java
 
-## **스터디 노션**
-노션 : [https://www.notion.so/70e79120d439482d924856d4571331d2](https://www.notion.so/70e79120d439482d924856d4571331d2)
+<br>
+
+<img src="https://img.icons8.com/ios/50/FFFFFF/notion.png" style="width: 40px;"/>
+
+## **스터디 Notion**
+[https://www.notion.so/70e79120d439482d924856d4571331d2](https://www.notion.so/70e79120d439482d924856d4571331d2)
 
 <br>
 
 ## **스터디 구성원 (6인)**
 
 👩‍💻 고명진 : [https://github.com/m0jinaa](https://github.com/m0jinaa)  
+👨‍💻 김대희 : [https://github.com/daynice](https://github.com/daynice)  
 👨‍💻 김민식 : [https://github.com/abin7989](https://github.com/abin7989)  
 👩‍💻 성다연 : [https://github.com/dysung32](https://github.com/dysung32)  
 👩‍💻 손예지 : [https://github.com/yezgoget](https://github.com/yezgoget)  
@@ -30,6 +35,7 @@
 <br>
 
 ## **일정표**
+[https://www.notion.so/696008d49bc345f9ac8b3cd39aa8a01e?v=bee7533defee42979a880547b218aae7](https://www.notion.so/696008d49bc345f9ac8b3cd39aa8a01e?v=bee7533defee42979a880547b218aae7)
 
 <details>
 <summary>1주차</summary>
