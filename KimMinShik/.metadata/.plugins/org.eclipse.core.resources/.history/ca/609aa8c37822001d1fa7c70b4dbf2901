@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static int map[][] = new int[4][4];
+	static boolean v[][] = new boolean[4][4];
+	static int dx[] = {1,-1,0,0};
+	static int dy[] = {0,0,1,-1};
+	static Set<Integer> set = new HashSet<>();
+	public static void DFS(int x,int y,int cnt,int num) {
+		if(cnt==6) {
+			set.add(num);
+			return;
+		}
+		for(int i = 0 ; i<4;i++) {
+			int nx = x+dx[i];
+			int ny = y+dy[i];
+			if(nx<0||ny<0||nx>=4||ny>=4||v[nx][ny])
+				continue;
+			v[nx][ny] = true;
+			DFS(nx,ny,cnt+1,num*10+map[nx][ny]);
+			v[nx][ny] = false;
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		int T = Integer.parseInt(br.readLine());
+		for (int test = 1; test <= T; test++) {
+			for (int i = 0; i < 4; i++) {
+				String s = br.readLine();
+				for (int j = 0, index = 0; j < 4; j++, index += 2) {
+					map[i][j] = s.charAt(index) - '0';
+				}
+			}
+			sb.append("#").append(test).append(" ").append(set.size());
+			
+			System.out.println(sb);
+		}
+	}
+}
