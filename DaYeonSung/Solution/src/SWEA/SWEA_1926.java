@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// SWEA 1926. 간단한 369게임
 public class SWEA_1926 {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
