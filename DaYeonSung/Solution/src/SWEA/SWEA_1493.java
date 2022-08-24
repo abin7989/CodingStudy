@@ -1,75 +1,79 @@
 package SWEA;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 // SWEA 1493. 수의 새로운 연산
 public class SWEA_1493 {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		StringBuilder sb = new StringBuilder();
+		
+		int T = Integer.parseInt(br.readLine());
+		
+		for (int tc = 1; tc <= T; tc++) {
+			st = new StringTokenizer(br.readLine());
+			int p = Integer.parseInt(st.nextToken());
+			int q = Integer.parseInt(st.nextToken());
+			
+			int x1 = solve_x(p);
+			int x2 = solve_x(q);
+			int y1 = solve_y(p);
+			int y2 = solve_y(q);
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt(); // 테스트 케이스 수
+			int ans = finalSolve(x1 + x2, y1 + y2);
 			
-		for (int tc = 1; tc <= T; tc++) { // 테스트 케이스 수 만큼 반복
-			int p = sc.nextInt(); // p 입력 받기
-			int q = sc.nextInt(); // q 입력 받기
-//			p★q = #(&(p) + &(q))
-//			&(p) = p가 붙은 좌표
-//			(x,y) + (z,w) = (x+z, y+w)
-//			#(x,y) = x,y 좌표의 수
-			
-//			(1, 1) / (1, 2) (2, 1) / (1, 3) (2, 2) (3, 1) / ...
-			
-			int px = 0;
-			int py = 0;
-			int qx = 0;
-			int qy = 0;
-			
-//			int sum = 0;
-//			while (sum <= 10000) {
-//				sum += num++;
-//			}
-//			System.out.println(num);
-//			
-//			sum = 0;
-//			for (int i = 1; i <= 141; i++) {
-//				sum += i;
-//			}
-//			System.out.println(sum);
-			
-			
-			int num = 1;
-			int add_x = 2;
-			int add_y = 1;
-			
-//			격자점에 수 붙이기
-			int[][] arr = new int[283][283];
-			
-			for (int x = 1; x <= 282; x++) {
-				for (int y = 1; y <= 282; y++) {
-					arr[x][y] = num;
-					num += add_x;
-					add_x++;
-				}
-				num += add_y;
-				add_y++;
+			sb.append("#").append(tc).append(" ").append(ans).append("\n");
+		}
+		
+		System.out.println(sb);
+	}
+	
+	private static int solve_x (int n) {
+		int num = 1; // 격자점에 넣어줄 값 초기값
+		int x = 1;
+		int cnt = 1;
+		while (num != n) {
+			cnt += 1;
+			for (int i = 1; i <= cnt; i++) {
+				x = i;
+				num += 1;
+				if (num == n) break;
 			}
-			
-			for (int x = 1; x <= 282; x++) {
-				for (int y = 1; y <= 282; y++) {
-					if (arr[x][y] == p) {
-						px = x;
-						py = y;
-					}
-					if (arr[x][y] == q) {
-						qx = x;
-						qy = y;
-					}
-				}
+		}
+		return x;
+	}
+	
+	private static int solve_y (int n) {
+		int num = 1; // 격자점에 넣어줄 값 초기값
+		int y = 1;
+		int cnt = 1;
+		while (num != n) {
+			cnt += 1;
+			for (int i = cnt; i >= 1; i--) {
+				y = i;
+				num += 1;
+				if (num == n) break;
 			}
-			
-			System.out.println(px + " " + py + " " + qx + " " + qy);
-
+		}
+		return y;
+	}
+	
+	private static int finalSolve (int x, int y) {
+		int num = 1;
+		int cnt = 1;
+		while (true) {
+			for (int p = 1, q = cnt; p <= cnt && q >= 1; p++, q--) {
+				if (p == x && q == y) return num;
+				num += 1;
+			}
+			cnt += 1;
 		}
 	}
-
+	
 }
