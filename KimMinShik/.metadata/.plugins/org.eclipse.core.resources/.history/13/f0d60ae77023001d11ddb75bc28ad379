@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static char map[];
+	static char rmap[];
+	public static void main(String[] args)throws IOException {
+		int n = Integer.parseInt(br.readLine());
+		for(int i = 0 ; i < n ; i++) {
+			for(int j = 0; j<n;j++) {
+				
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		int T;
+		T=Integer.parseInt(br.readLine());
+		for(int test_case = 1; test_case <= T; test_case++) {
+			sb.append("#").append(test_case).append(" ");
+			st = new StringTokenizer(br.readLine()," ");
+			int n = Integer.parseInt(st.nextToken());
+			int m = Integer.parseInt(st.nextToken());
+			int pa[] = new int [n+1];
+			for(int i = 1;i<=n;i++) {
+				pa[i] = i;
+			}
+			for(int i = 0 ; i<m;i++) {
+				st = new StringTokenizer(br.readLine()," ");
+				int test = Integer.parseInt(st.nextToken());
+				int from = Integer.parseInt(st.nextToken());
+				int to = Integer.parseInt(st.nextToken());
+				switch (test) {
+				case 0:
+					while(pa[from]!=from) {
+						int temp = pa[from];
+						pa[from] = to;
+						from = temp;
+					}
+					pa[from] = to;
+					break;
+				case 1:
+					while(pa[from]!= from) {
+						from = pa[from];
+					}
+					while(pa[to]!= to) {
+						to = pa[to];
+					}
+					if(from==to)
+						sb.append(1);
+					else
+						sb.append(0);
+					break;
+				}
+			}
+			sb.append("\n");
+		}
+		System.out.println(sb);
+	}
+}
