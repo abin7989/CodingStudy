@@ -1,0 +1,23 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+	static BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+	static StringTokenizer st;
+	static StringBuilder sb = new StringBuilder(1000);
+	
+	public static void main(String[] args) throws IOException{
+		int a =11*11*11*11*11;
+		System.out.println(a);
+		int T = Integer.parseInt(bReader.readLine());
+		for(int test_case  = 1;test_case<=T;test_case++) {
+			sb.append("#").append(test_case).append(" ");
+			int n = Integer.parseInt(bReader.readLine());
+			for(int i = 0 ; i < n ; i++) {
+				
+			}
+		}
+	}
+}

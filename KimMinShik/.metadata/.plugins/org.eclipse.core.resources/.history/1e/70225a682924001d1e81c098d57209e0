@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sBuilder = new StringBuilder(1000);
+	static StringTokenizer stringTokenizer;
+	static int b[];
+	static Node
+	public static void main(String[] args) throws IOException{
+		stringTokenizer = new StringTokenizer(bReader.readLine()," ");
+		int v = Integer.parseInt(stringTokenizer.nextToken());
+		int e = Integer.parseInt(stringTokenizer.nextToken());
+		int start = Integer.parseInt(bReader.readLine());
+		b = new int[v+1];
+		for(int i = 0 ; i < v;i++) {
+			b[i] = Integer.MAX_VALUE;
+		}
+		for(int i = 0 ; i < e; i++) {
+			
+		}
+	}
+	static class Node implements Comparable<Node>{
+		List<Node> to = new ArrayList<Main.Node>();
+		int w;
+		public Node(int w) {
+			super();
+			this.w = w;
+		}
+		@Override
+		public int compareTo(Node o) {
+			return w-o.w;
+		}
+	}
+}
