@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sBuilder = new StringBuilder(1000);
+	static StringTokenizer stringTokenizer;
+	static int b[];
+	static Node node[];
+	static PriorityQueue<Edge> priorityQueue = new PriorityQueue<Edge>();
+	public static void main(String[] args) throws IOException{
+		stringTokenizer = new StringTokenizer(bReader.readLine()," ");
+		int v = Integer.parseInt(stringTokenizer.nextToken());
+		int e = Integer.parseInt(stringTokenizer.nextToken());
+		int start = Integer.parseInt(bReader.readLine());
+
+		b = new int[v+1];
+		for(int i = 0 ; i < v;i++) {
+			b[i] = Integer.MAX_VALUE;
+		}
+		int f,t,w;
+		for(int i = 0 ; i < e; i++) {
+			stringTokenizer = new StringTokenizer(bReader.readLine()," ");
+			priorityQueue.add(new Edge(Integer.parseInt(stringTokenizer.nextToken()),
+					Integer.parseInt(stringTokenizer.nextToken()),
+					Integer.parseInt(stringTokenizer.nextToken()));
+			
+			
+			Integer.parseInt(stringTokenizer.nextToken());
+			
+		}
+	}
+	static class Edge implements Comparable<Edge>{
+		Edge from;
+		Edge to ;
+		int w;
+		
+		public Edge(Edge from, Edge to, int w) {
+			super();
+			this.from = from;
+			this.to = to;
+			this.w = w;
+		}
+
+		@Override
+		public int compareTo(Edge o) {
+			return w-o.w;
+		}
+	}
+}

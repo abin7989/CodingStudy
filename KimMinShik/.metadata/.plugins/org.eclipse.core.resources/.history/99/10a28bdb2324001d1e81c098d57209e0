@@ -1,0 +1,58 @@
+import java.awt.Point;
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+	static BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sBuilder = new StringBuilder(1000);
+	static StringTokenizer stringTokenizer;
+	static int map[][];
+	static List<Point> point= new ArrayList<Point>();
+	static Queue<Point> queue = new ArrayDeque<Point>();
+	static boolean v[];
+	static boolean mv[];
+	static Point pr[];
+	static int n;
+	static int px = 1;
+	static int py = 1;
+	static int homeAndMonsterSize = 0;
+	static void prem(int cnt) {
+		if (cnt == homeAndMonsterSize) {
+			int temp = 0;
+			return;
+		}
+		for (int i = 0; i < homeAndMonsterSize; i++) {
+			if (v[i])
+				continue;
+			v[i] = true;
+			pr[cnt] = point.get(i);
+			prem(cnt + 1);
+			v[i] = false;
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		int T = Integer.parseInt(bReader.readLine());
+		for (int test_case = 1; test_case <= T; test_case++) {
+			n = Integer.parseInt(bReader.readLine());
+			map = new int[n + 1][n + 1];
+			px = 1;
+			py = 1;
+			for (int i = 1; i <= n; i++) {
+				stringTokenizer = new StringTokenizer(bReader.readLine(), " ");
+				for (int j = 1; j <= n; j++) {
+					map[i][j] = Integer.parseInt(stringTokenizer.nextToken());
+					if (map[i][j] > 0) {
+						point.add(new Point(i,j));
+					}
+					else if (map[i][j] < 0) {
+						point.add(new Point(i,j));
+					}
+				}
+			}
+			v = new boolean[point.size()];
+			pr = new Point[point.size()];
+			homeAndMonsterSize =  point.size();
+		}
+	}
+}
