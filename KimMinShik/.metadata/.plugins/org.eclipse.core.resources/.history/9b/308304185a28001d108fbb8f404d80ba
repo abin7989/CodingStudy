@@ -1,0 +1,79 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+		static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		static StringTokenizer st;
+		static StringBuilder sb  = new StringBuilder(1000);
+		static int cubeU[] = {-1,2,6,2,2,1,5};
+		static int cubeD[] = {-1,5,1,5,5,6,2};
+		static int cubeL[] = {-1,4,4,1,1,4,4};
+		static int cubeR[] = {-1,3,3,6,6,3,3};
+		static int cubeTop[] = {-1,6,5,4,3,2,1};
+		static	 int cubeNum[] = new int [7];
+		static int px;
+		static int py;
+		static int com;
+		static int nowNum;
+		public static void main(String[] args) throws IOException {
+			st = new StringTokenizer(br.readLine()," " );
+			int n = Integer.parseInt(st.nextToken());
+			int m = Integer.parseInt(st.nextToken());
+			int px = Integer.parseInt(st.nextToken());
+			int py = Integer.parseInt(st.nextToken());
+			int com = Integer.parseInt(st.nextToken());
+			int map[][] = new int [n][m];
+			for(int i = 0 ; i < n ; i++) {
+				st = new StringTokenizer(br.readLine()," " );
+				for(int j = 0 ; j < m ; j++) {
+					map[i][j] = Integer.parseInt(st.nextToken());
+				}
+			}
+			st = new StringTokenizer(br.readLine()," " );
+			
+			for(int i =0; i <com;i++) {
+				int pos = Integer.parseInt(st.nextToken());
+				switch (pos) {
+				case 1:
+					py++;
+					sb.append(cubeNum[cubeTop[nowNum]]).append("\n");
+					break;
+				case 2:
+					break;
+				case 3:
+					
+					break;
+				case 4:
+					
+					break;
+
+				default:
+					break;
+				}(pos) {
+					
+				}
+			}
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

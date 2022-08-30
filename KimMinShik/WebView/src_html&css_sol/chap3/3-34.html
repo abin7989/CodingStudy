@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form control</title>
+</head>
+<body>
+
+	<h2>form control - select</h2>
+	<form>
+		<fieldset>
+			<legend>설문조사</legend>
+			<ul>
+			<li>
+			<label for="name">이름</label>
+			<input type="text" id="name" name="name">
+			</li>
+			<li>
+			<label for="bbteam">응원팀</label>
+			<input type="text" id="bbteam" list="teamlist">
+			<datalist id="teamlist">
+				<option value="bears" label="두산베어스"></option>
+				<option value="heroes" label="키움히어로즈"></option>
+				<option value="wyverns" label="SK와이번스"></option>
+				<option value="giants" label="롯데자이언츠"></option>
+				<option value="wiz" label="KT위즈"></option>
+				<option value="eagles" label="한화이글스"></option>
+				<option value="tigers" label="KIA타이거즈"></option>
+				<option value="lions" label="삼성라이온즈"></option>
+				<option value="twins" label="LG트윈스"></option>
+				<option value="dinos" label="NC다이노스"></option>
+			</datalist>
+			</li>
+			</ul>
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form control</title>
+</head>
+<body>
+<div align="center">
+	<h2>form control test - 회원가입</h2>
+	<form>
+	<table width="500" border="1">
+	<tr>
+		<td align="center" width="150">이름</td>
+		<td><input type="text" name="username"></td>
+	</tr>
+	<tr>
+		<td align="center">아이디</td>
+		<td>
+		<input type="text" name="userid">
+		<input type="button" value="중복확인">
+		</td>
+	</tr>
+	<tr>
+		<td align="center">비밀번호</td>
+		<td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<td align="center">비밀번호확인</td>
+		<td><input type="password" name="passck"></td>
+	</tr>
+	<tr>
+		<td align="center">성별</td>
+		<td>
+		<input type="radio" name="gender" value="m"> 남
+		<input type="radio" name="gender" value="f" checked="checked"> 여
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">좋아하는 과일</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+		<input type="checkbox" name="fruit" value="사과"> 사과
+		<input type="checkbox" name="fruit" value="수박" checked="checked"> 수박
+		<input type="checkbox" name="fruit" value="딸기"> 딸기
+		<input type="checkbox" name="fruit" value="포도"> 포도
+		</td>
+	</tr>
+	<tr>
+		<td align="center">이메일</td>
+		<td>
+		<input type="text" name="emailid" size="10">
+		@
+		<select name="emaildomain">
+			<option value="daum">다음
+			<option value="naver" selected="selected">네이버
+			<option value="google">구글
+			<option value="nate">네이트
+			<option value="">직접입력
+		</select>
+		<input type="text" name="emaildomain2" size="10">
+		</td>
+	</tr>	
+	<tr>
+		<td align="center">연락처</td>
+		<td>
+		<select name="area">
+			<option value="010">010
+			<option value="02" selected="selected">02
+			<option value="031">031
+			<option value="041">041
+			<option value="051">051
+			<option value="061">061
+		</select>
+		-
+		<input type="text" size="4" maxlength="4" name="tel2">
+		-
+		<input type="text" size="4" maxlength="4" name="tel2">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+		<input type="submit" value="회원가입">
+		<input type="reset" value="초기화">
+		</td>
+	</tr>	
+	</table>
+	</form>
+</div>
+</body>
+</html>

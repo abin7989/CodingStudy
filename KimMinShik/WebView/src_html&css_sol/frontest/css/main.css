@@ -1,0 +1,193 @@
+/* 전체 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 상단 Header */
+.header {
+  height: 70px;
+  box-shadow: 0px 1px 10px rgba(100, 90, 50, 0.3);
+}
+
+.nav {
+  position: relative;
+  margin: auto;
+  max-width: 1200px;
+  width: calc(100%-120px);
+  height: 70px;
+}
+
+#logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: dodgerblue;
+  float: left;
+  margin-left: 20px;
+  line-height: 70px;
+  height: 70px;
+}
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.menu > li {
+  float: left;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.menu > li:last-child {
+  margin-right: 10px;
+}
+
+.menu-item {
+  color: darkcyan;
+}
+
+.menu-item:hover {
+  color: blueviolet;
+}
+/* 중앙 Content */
+.content {
+  margin: 10px auto;
+  max-width: 1200px;
+}
+
+/* 중앙 Left */
+.content-left {
+  width: 25%;
+  float: left;
+}
+
+.content-left-profile {
+  margin: 5px auto;
+  height: 180px;
+  text-align: center;
+}
+
+.content-left-profile > img {
+  margin-top: 5px;
+  height: 170px;
+}
+
+.content-left-poll-btn {
+  text-align: center;
+  margin: 10px auto;
+}
+
+#btn-makepoll {
+  width: 150px;
+  /* height: 30px; */
+  background-color: darkcyan;
+  border-color: blueviolet;
+  color: antiquewhite;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  display: none;
+}
+
+.content-left-poll {
+  border: 2px solid steelblue;
+  border-radius: 7px;
+  padding: 10px;
+  min-height: 250px;
+  color: darkgray;
+  font-size: 18px;
+}
+
+.poll-title {
+  color: steelblue;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.poll-question {
+  color: brown;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.poll-answer {
+  margin: 10px;
+}
+
+.poll-answer > ul > li {
+  margin-bottom: 5px;
+}
+
+.poll-btn {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.button {
+  margin-left: 5px;
+  padding: 5px;
+  background-color: aliceblue;
+  border: 1px solid rgb(103, 53, 240);
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: crimson;
+  color: bisque;
+}
+
+.poll-date {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* 중앙 Main */
+.content-section {
+  width: 75%;
+  float: right;
+}
+
+.content-section-article {
+  border: 1px solid red;
+  margin: 10px 5px;
+  padding: 5px;
+  max-width: 900px;
+  height: 150px;
+}
+
+/* 하단 Footer */
+.footer {
+  clear: both;
+  margin: 20px auto;
+  max-width: 1200px;
+  height: 50px;
+  border: 1px solid lightblue;
+  padding: 10px;
+}
+
+.footer > ul {
+  float: right;
+}
+
+.footer > ul > li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 15px;
+  color: rgb(160, 159, 157);
+  line-height: 50px;
+}

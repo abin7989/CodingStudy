@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	text-align: center;
+	border: gray 1px solid;
+	width: 200px;
+	height: 170px;
+}
+
+td {
+	border: gray 1px solid;
+}
+
+.view {
+	border: steelblue 2px solid;
+	background-color: skyblue;
+}
+</style>
+</head>
+<body>
+	<table>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	</table>
+	<br>
+	<table>
+	<tr>
+		<td colspan="2" 
+			class="view">1</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	</table>
+	<br>
+	<table>
+	<tr>
+		<td rowspan="2" 
+			class="view">1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>4</td>
+	</tr>
+	</table>
+	<br>
+	<table>
+	<tr>
+		<td>1</td>
+		<td rowspan="2" 
+			class="view">2</td>
+	</tr>
+	<tr>
+		<td>3</td>
+	</tr>
+	</table>
+</body>
+</html>

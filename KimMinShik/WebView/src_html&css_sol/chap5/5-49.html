@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position Property(z-index)</title>
+
+    <style type="text/css">
+      #img1 {
+        position: absolute;
+        z-index: 1;
+      }
+      #p1 {
+        position: absolute;
+        color: tomato;
+        font: bold 20px/1.6em Verdana;
+        z-index: 1;
+      }
+      .output {
+        width: 100%;
+        background-color: lightgray;
+        font: bold 12px/1.6em Verdana;
+        padding: 10px;
+        text-align: justify;
+        word-break: keep-all;
+        position: relative;
+        height: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="output">
+      이미지와 글자의 위치를 지정.<br />
+      <img src="../img/css3.png" id="img1" />
+      <p id="p1">positioning한 글자와 그림입니다.</p>
+    </div>
+  </body>
+</html>

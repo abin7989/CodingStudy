@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Descendant Selector(하위선택자)</title>
+	
+	<style type="text/css">
+	div div { background: blue; color: red; }
+	div p { background: lightgray; color: skyblue; }
+	div > div { background: green; color: orange; }
+	div > p { background: purple; color: pink; }
+	</style>
+</head>
+<body>
+	<div>div Descendant Selector div
+		<p>div > p Descendant Selector p</p>
+		<div>div div Descendant Selector
+			<span><div>
+				<ul>
+					<li><p>div p Descendant Selector</p></li>
+				</ul>
+			</div></span>
+		</div>
+	</div>
+</body>
+</html>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
