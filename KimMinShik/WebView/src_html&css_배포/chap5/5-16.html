@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Font Property(font)</title>
+
+    <style type="text/css">
+      /* 글씨 크기가 13px이고 행간격이 1.7em인 bold체 Verdana 글꼴 */
+      #target1 {
+        font: bold 13px/1.7em Verdana;
+      }
+      /* 글씨 크기가 13px인 italic체 Tahoma 글꼴 */
+      #target2 {
+        font: italic 13px Tahoma;
+      }
+      /* Full option */
+      #target3 {
+        font: italic small-caps bold 13px/1.7em Arial;
+      }
+      /* bold가 순서에 맞지 않아서 이후의 sans-serif 글꼴 무시 */
+      #target4 {
+        font: 13px/1.5em bold sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>font</h1>
+    <p id="target1">target1이 적용된 문장입니다.</p>
+    <p id="target2">target2이 적용된 문장입니다.</p>
+    <p id="target3">target3이 적용된 문장입니다.</p>
+    <p id="target4">target4이 적용된 문장입니다.</p>
+  </body>
+</html>

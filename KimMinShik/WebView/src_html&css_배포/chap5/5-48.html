@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Position Property(visibility &amp; display)</title>
+	
+	<style type="text/css">
+	div,table { width: 200px; text-align: center; }
+	.td_button { 
+		height: 20px; background-color: skyblue;
+		border: 1px solid steelblue; cursor: pointer;
+		font-size: 13px; color: lightgray;
+		text-align: center;
+	}
+	.output { background: white; }
+	.visible { visibility: visible; }
+	.hidden { visibility: hidden; }
+	.block { display: block; }
+	.none { display: none; }
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).on("click", "td", function() {
+		$("#imgview").attr("class", $(this).text());
+	});
+	</script>
+</head>
+<body>
+	<div id="imgview"><img src="../img/css3.png"></div>
+	<table>
+		<tr>
+			<td colspan="2"> visiblility</td>
+		</tr>
+		<tr>
+			<td class="td_button">visible</td>
+			<td class="td_button">hidden</td>
+		</tr>
+		<tr>
+			<td colspan="2">display</td>
+		</tr>
+		<tr>
+			<td class="td_button">block</td>
+			<td class="td_button">none</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

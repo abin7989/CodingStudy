@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sibling Selector(형제선택자)</title>
+
+    <style type="text/css">
+      div + p {
+        background: lightgray;
+        color: orange;
+      }
+      div.target ~ p {
+        background: green;
+        color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>div Adjacent Sibling Selector div</div>
+    <p>div + p 1 Adjacent Sibling Selector</p>
+    <p>div + p 2 Adjacent Sibling Selector</p>
+    <div class="target">div General Sibling Selector</div>
+    <p>target ~ p 1 General Sibling Selector</p>
+    <p>target ~ p 2 General Sibling Selector</p>
+    <div>div Sibling Selector</div>
+    <p>target ~ p 3 General Sibling Selector</p>
+  </body>
+</html>

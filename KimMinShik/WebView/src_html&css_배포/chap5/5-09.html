@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pseudo-classes Selector(가상클래스선택자)</title>
+
+    <style type="text/css">
+      p.intro::first-letter {
+        font-size: 200%;
+      }
+
+      p.intro::first-line {
+        font-weight: bold;
+      }
+
+      p:last-child::after {
+        content: "(source: www.w3schools.com)";
+        color: orange;
+      }
+
+      ::selection {
+        color: steelblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Tutorial</h1>
+    <h3>CSS is a language that describes the style of an HTML document.</h3>
+    <p class="intro">CSS describes how HTML elements should be displayed.</p>
+    <p>This tutorial will teach you CSS from basic to advanced.</p>
+  </body>
+</html>

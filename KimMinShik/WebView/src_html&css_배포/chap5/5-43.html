@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position Property(위치속성)</title>
+
+    <style type="text/css">
+      .output {
+        height: 400px;
+        position: relative;
+        background: skyblue;
+        font: bold 15px/1.6em Verdana;
+        padding: 10px;
+      }
+      .side {
+        position: absolute;
+        border: 1px solid steelblue;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+      }
+      .palegreen {
+        bottom: 50px;
+        right: 50px;
+        background-color: palegreen;
+      }
+      .gold {
+        top: 50px;
+        right: 50px;
+        background-color: gold;
+      }
+      .tomato {
+        bottom: 50px;
+        left: 50px;
+        background-color: tomato;
+      }
+      .royalblue {
+        top: 50px;
+        left: 50px;
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="output">
+      <div class="side palegreen">bottom: 50px; right: 50px;</div>
+      <div class="side gold">top: 50px; right: 50px;</div>
+      <div class="side tomato">bottom: 50px; left: 50px;</div>
+      <div class="side royalblue">top: 50px; left: 50px;</div>
+    </div>
+  </body>
+</html>

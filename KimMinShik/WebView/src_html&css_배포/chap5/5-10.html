@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Attribute Selector(속성선택자)</title>
+
+    <style type="text/css">
+      [title] {
+        color: steelblue;
+        font-weight: bold;
+      }
+      [title="two"] {
+        border: 2px solid pink;
+      }
+      p[title="two"] {
+        color: orange;
+      }
+      p[title~="second"] {
+        background: silver;
+      }
+      p[class^="second"] {
+        background: cyan;
+      }
+      p[class$="wrap"] {
+        color: deeppink;
+        font-weight: bold;
+      }
+      [class*="three"] {
+        background: green;
+      }
+      [class|="second"] {
+        border: 2px dotted darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div title="one">selector [attribute name]</div>
+    <div title="two">selector [attribute name=value]</div>
+    <p title="two">selector [attribute name=value]</p>
+    <p title="first second third">selector [attribute name~=value]</p>
+    <p class="second-container">selector [attribute name^=value]</p>
+    <p class="second-wrap">selector [attribute name$=value]</p>
+    <div class="one-two-three">selector [attribute name|=value]</div>
+  </body>
+</html>

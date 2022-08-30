@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Box Model(margin, padding, border)</title>
+
+    <style type="text/css">
+      ul {
+        background: lightgray;
+        border-style: dotted;
+        border-width: medium;
+        border-color: black;
+        margin: 12px;
+        padding: 3px;
+      }
+      li {
+        color: tomato;
+        background: skyblue;
+        border-style: solid;
+        margin: 12px;
+        padding: 12px;
+        list-style: none;
+      }
+      li.withborder {
+        border-style: dashed;
+        border-width: thick;
+        border-color: maroon;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>첫번째 리스트입니다.</li>
+      <li class="withborder">두번째 리스트입니다.</li>
+    </ul>
+  </body>
+</html>

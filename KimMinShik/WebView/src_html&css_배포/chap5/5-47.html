@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position Property(clip)</title>
+
+    <style type="text/css">
+      .box {
+        position: absolute;
+        border: 1px solid royalblue;
+        font: 12px verdana;
+      }
+      .auto {
+        left: 50;
+        clip: rect(auto);
+      }
+      .top {
+        left: 150;
+        clip: rect(15px auto auto auto);
+      }
+      .right {
+        left: 250;
+        clip: rect(auto 15px auto auto);
+      }
+      .bottom {
+        left: 350;
+        clip: rect(auto auto 15px auto);
+      }
+      .left {
+        left: 450;
+        clip: rect(auto auto auto 15px);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../img/css3.png" class="box auto" width="100" /><br />
+    <!-- <img src="../img/css3.png" class="box left" width="100" /><br /> -->
+    <!-- <img src="../img/css3.png" class="box top" width="100" /><br /> -->
+    <!-- <img src="../img/css3.png" class="box right" width="100"><br> -->
+    <!-- <img src="../img/css3.png" class="box bottom" width="100"><br> -->
+  </body>
+</html>
