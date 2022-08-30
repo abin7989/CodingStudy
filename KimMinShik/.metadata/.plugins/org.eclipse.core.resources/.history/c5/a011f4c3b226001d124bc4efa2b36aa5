@@ -1,0 +1,99 @@
+import java.awt.Point;
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder(1000);
+	static StringTokenizer st;
+	static int dx[] = { -1, -1, 0, 1, 1, 1, 0, -1 };
+	static int dy[] = { 0, 1, 1, 1, 0, -1, -1, -1 };
+	static List<Fire> f = new LinkedList<Main.Fire>();
+	static int map[][];
+	static Node nmap[][];
+	static int n;
+	static List<ArrayList<Point>> pos = new ArrayList<ArrayList<Point>>();
+
+	public static void main(String[] args) throws IOException {
+		st = new StringTokenizer(br.readLine(), " ");
+		n = Integer.parseInt(st.nextToken());
+		map = new int[n + 1][n + 1];
+		nmap = new Node[n + 1][n + 1];
+		int com = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
+		for (int i = 0; i < com; i++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			int x = Integer.parseInt(st.nextToken());
+			int y = Integer.parseInt(st.nextToken());
+			f.add(new Fire(x, y, Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()),
+					Integer.parseInt(st.nextToken())));
+			nmap[x][y].fnum.add(f.get(i));
+		}
+
+		for (int tc = 0; tc < k; tc++) {
+			Move();
+			pos.clear();
+			findMap();
+
+		}
+	}
+
+	static void findMap() {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				if (map[i][j] > 1) {
+				}
+			}
+		}
+	}
+
+	static void Move() {
+		int x;
+		int y;
+		int m;
+		int s;
+		int d;
+		int nx;
+		int ny;
+		for (Fire var : f) {
+			x = var.x;
+			y = var.y;
+			map[x][y] = 0;
+			nmap[x][y].fnum.remove(var);
+			m = var.m;
+			s = var.s;
+			d = var.d;
+			nx = s * dx[d] + x;
+			ny = s * dy[d] + y;
+			if (nx < 1 || ny < 1 || nx > n || ny > n)
+				continue;
+			map[nx][ny]++;
+			nmap[nx][ny].fnum.add(var);
+			var.x = nx;
+			var.y = ny;
+		}
+
+	}
+
+	static class Node {
+		List<Fire> fnum = new LinkedList<Fire>();
+	}
+
+	static class Fire {
+		int x;
+		int y;
+		int m;// 질량
+		int s;// 이동칸
+		int d;// 방향
+
+		public Fire(int x, int y, int m, int s, int d) {
+			super();
+			this.x = x;
+			this.y = y;
+			this.m = m;
+			this.s = s;
+			this.d = d;
+		}
+
+	}
+}

@@ -1,0 +1,191 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+		static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		static StringTokenizer st;
+		static int dx[] = {0,1,0,-1};
+		static int dy[] = {-1,0,1,0};
+		static int cp[] = {1,2,3,0};
+		static int map[][];
+		static int fin;
+		static int n ;
+		public static void main(String[] args) throws IOException {
+			n = Integer.parseInt(br.readLine());
+			map = new int [n][n];
+			for(int i = 0 ; i < n ; i++ ) {
+				st = new StringTokenizer(br.readLine()," ");
+				for(int j=0;j<n;j++) {
+					map[i][j] = Integer.parseInt(st.nextToken());
+				}
+			}
+			int x = n/2;
+			int y = n/2;
+			int lo = 1;
+			int cnt = 0;
+			int size = 2;
+			int pos = 0;
+			int num = 1;
+			while(true) {
+				if(cnt==size) {
+					lo++;
+					cnt=0;
+				}
+				if(lo==n)
+					break;
+				if(lo == n-1)
+					size=3;
+				cnt++;
+				for(int i = 0 ; i<lo;i++) {
+					if(map[x][y]!=0)
+						go(x,y,pos);
+					int nx = x+dx[pos];
+					int ny = y+dy[pos];
+					x = nx;
+					y = ny;
+				}
+				pos=cp[pos];
+			}
+			System.out.println(fin);
+		}
+		
+		
+		
+		static double s[] = {0.01,0.07,0.1};
+		static void go(int px,int py,int tx,int ty,int pos) {
+			int temp = map[px][py]+map[tx][ty];
+			int tp = 0;
+			double sum = 0;
+			int g = 0;
+			int ny;
+			int nx;
+			if(pos%2==0) {
+				for(int i = 0 ; i < 3;i++) {
+					ny = py+(dy[pos]*i);
+					sum = temp*s[i];
+					g = (int)sum;
+					tp+=g+g;
+					if(ny<0||ny>=n) {
+						fin+=g;
+						continue;
+					}
+					if(px+1>=n)
+						fin+=g;
+					else
+						map[px+1][ny]+= g;
+					if(px-1<0)
+						fin+=g;
+					else
+						map[px-1][ny]+= g;
+				}
+				sum = temp*0.05;
+				g = (int)sum;
+				tp+=g;
+				ny = py+(dy[pos]*4);
+				if(ny<0||ny>=n)
+					fin+=g;
+				else
+					map[px][ny] += g;
+				
+				sum = temp*0.02;
+				g = (int)sum;
+				tp+=g+g;
+				ny = py+(dy[pos]*1);
+				if(ny<0||ny>=n)
+					fin+=g;
+				else {
+					if(px+2>=n)
+						fin+=g;
+					else
+						map[px+2][ny]+=g;
+					if(px-2<0)
+						fin+=g;
+					else
+						map[px-2][ny]+=g;
+				}
+				temp-=tp;
+				ny = py+(dy[pos]*2);
+				if(ny<0||ny>=n)
+					fin+=temp;
+				else
+					map[px][ny] +=temp;
+			}
+			else {
+				for(int i = 0 ; i < 3;i++) {
+					nx = px+(dx[pos]*i);
+					sum = temp*s[i];
+					g = (int)sum;
+					tp+=g+g;
+					if(nx<0||nx>=n) {
+						fin+=g;
+						continue;
+					}
+					if(py+1>=n)
+						fin+=g;
+					else
+						map[nx][py+1]+= g;
+					if(py-1<0)
+						fin+=g;
+					else
+						map[nx][py-1]+= g;
+				}
+				
+				sum = temp*0.05;
+				g = (int)sum;
+				tp+=g;
+				nx = px+(dx[pos]*4);
+				if(nx<0||nx>=n)
+					fin+=g;
+				else
+					map[nx][py] += g;
+				
+				sum = temp*0.02;
+				g = (int)sum;
+				tp+=g+g;
+				nx = px+(dx[pos]*2);
+				if(nx<0||nx>=n)
+					fin+=g;
+				else {
+					if(py+2>=n)
+						fin+=g;
+					else
+						map[nx][py+2]+=g;
+					if(py-2<0)
+						fin+=g;
+					else
+						map[nx][py-2]+=g;
+				}
+				
+				temp-=tp;
+				nx = px+(dx[pos]*2);
+				if(nx<0||nx>=n)
+					fin+=temp;
+				else
+					map[nx][py] +=temp;
+			}
+			map[px][py] = 0;
+			map[tx][ty] = 0;
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
