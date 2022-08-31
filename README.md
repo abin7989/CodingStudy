@@ -22,9 +22,10 @@
 
 <br>
 
-## **스터디 구성원 (7인)**
+## **스터디 구성원 (8인)**
 
 👩‍💻 고명진 : [https://github.com/m0jinaa](https://github.com/m0jinaa)  
+👩‍💻 곽민주 : [https://github.com/skyju](https://github.com/skyju)  
 👨‍💻 김대희 : [https://github.com/daynice](https://github.com/daynice)  
 👨‍💻 김민식 : [https://github.com/abin7989](https://github.com/abin7989)  
 👩‍💻 성다연 : [https://github.com/dysung32](https://github.com/dysung32)  
