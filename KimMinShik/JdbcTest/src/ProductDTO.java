@@ -18,7 +18,6 @@ public class ProductDTO {
 		this.productDate = productDate;
 	}
 	
-
 	public String getProductId() {
 		return productId;
 	}

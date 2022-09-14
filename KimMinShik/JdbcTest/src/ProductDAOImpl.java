@@ -20,19 +20,24 @@ public class ProductDAOImpl implements ProductDAO {
 		try {
 		con = DBConnection.getConnection();
 		pst = con.prepareStatement(sql);
-		con.setAutoCommit(false);
 		pst.setString(1,productDTO.getProductId());
 		pst.setString(2,productDTO.getProductName());
 		pst.setInt(3, productDTO.getProductPrice());
 		pst.setString(4,productDTO.getProductDesc());
 		pst.executeUpdate();
-		con.commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			DBClose.close(pst);
-			DBConnection.returnConnection(con);
+			try {
+				pst.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	@Override
@@ -52,8 +57,7 @@ public class ProductDAOImpl implements ProductDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			DBClose.close(pst);
-			DBConnection.returnConnection(con);
+			DBClose.close(con,pst);
 		}
 	}
 	@Override
@@ -72,8 +76,7 @@ public class ProductDAOImpl implements ProductDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			DBClose.close(pst);
-			DBConnection.returnConnection(con);
+			DBClose.close(con,pst);
 		}
 		
 	}
@@ -101,8 +104,7 @@ public class ProductDAOImpl implements ProductDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			DBClose.close(pst,rs);
-			DBConnection.returnConnection(con);
+			DBClose.close(con,pst,rs);
 		}
 		return pp;
 		
@@ -131,8 +133,7 @@ public class ProductDAOImpl implements ProductDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			DBClose.close(pst,rs);
-			DBConnection.returnConnection(con);
+			DBClose.close(con,pst,rs);
 		}
 
 		return pp;
@@ -143,7 +144,8 @@ public class ProductDAOImpl implements ProductDAO {
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		ArrayList<ProductDTO> pp = new ArrayList<>();
-		String sql = "select product_id,product_name,product_price,product_desc,date_format(register_date,\"%y.%m.%d\") as register_date from product";
+		String sql = "select product_id,product_name,product_price,product_desc,date_format(register_date,'%y.%m.%d') as register_date "
+				+ "from product";
 		try {
 			con = DBConnection.getConnection();
 		pst = con.prepareStatement(sql);
@@ -160,8 +162,7 @@ public class ProductDAOImpl implements ProductDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			DBClose.close(pst,rs);
-			DBConnection.returnConnection(con);
+			DBClose.close(con,pst,rs);
 		}
 		return pp;
 	}

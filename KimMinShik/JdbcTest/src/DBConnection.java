@@ -17,25 +17,8 @@ public class DBConnection {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		makePool();
 	}
 	public static Connection getConnection() throws SQLException {
-		if(!connectionPool.isEmpty())
-			return connectionPool.poll();
-		else
 			return DriverManager.getConnection(URL,DB_ID,DB_PASS);
-	}
-	public static void returnConnection(Connection t) {
-		connectionPool.offer(t);
-	}
-	public static void makePool() {
-		for(int i = 0 ; i < 5;i++) {
-			try {
-				connectionPool.offer(DriverManager.getConnection(URL,DB_ID,DB_PASS));
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
 	}
 }
