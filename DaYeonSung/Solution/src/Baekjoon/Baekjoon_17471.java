@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -83,7 +82,7 @@ public class Baekjoon_17471 {
 		
 	}
 	
-	// 분리된 선거구로 인구 차이 최솟값 구하기
+	// 선거구 2개 유효성 확인
 	private static boolean check(ArrayList<Integer> group) {
 		Queue<Integer> queue = new LinkedList<>();
 		visited = new boolean[N];
@@ -106,6 +105,7 @@ public class Baekjoon_17471 {
 		else return false;
 	}
 	
+	// 두 선거구 최소 인구 차 구하기
 	private static void calc() {
 		int sum1 = 0, sum2 = 0;
 		for (int i = 0; i < group1.size(); i++) {
